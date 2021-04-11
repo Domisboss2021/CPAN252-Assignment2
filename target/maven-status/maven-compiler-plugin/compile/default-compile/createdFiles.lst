@@ -1,0 +1,3 @@
+com\szwec\interceptor\Logged.class
+com\szwec\interceptor\LoggedInterceptor.class
+com\szwec\StoreBean.class

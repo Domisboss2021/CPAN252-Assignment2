@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+<h:body>
+    <div class="p-d-flex">
+        <div class="p-mr-2">
+            <p:dataTable var="inventory value=#{StoreBean.inventories}">
+
+                <p:column headerText="Item Id">
+                    <h:outputText value="#{inventory.id}"/>
+                </p:column>
+
+                <p:column headerText="Name">
+                    <h:outputText value="#{inventory.name}"/>
+                </p:column>
+
+                <p:column headerText="Sport">
+                    <h:outputText value="#{inventory.sport}"/>
+                </p:column>
+
+                <p:column headerText="Quantity">
+                    <h:outputText value="#{inventory.quantity}"/>
+                </p:column>
+
+                <p:column headerText="Price">
+                    <h:outputText value="#{inventory.price}"/>
+                </p:column>
+
+                <p:column headerText="Date Added/Updated">
+                    <h:outputText value="#{inventory.date}"/>
+                </p:column>
+
+            </p:dataTable>
+        </div>
+        <div class="p-mr-2" style="margin-top: 2em">
+            <h:form>
+                <div class="p-field" style="margin: 2em">
+                    <p:outputLabel for="id" style="margin-right: 1em">Item Id: </p:outputLabel>
+                    <p:inputText id="id" type="text" value="#{StoreBean.id}">
+                    </p:inputText>
+                </div>
+                <div class="p-field" style="margin: 2em">
+                    <p:outputLabel for="name" style="margin-right: 1em">Name: </p:outputLabel>
+                    <p:inputText id="name" type="text" value="#{StoreBean.name}">
+                    </p:inputText>
+                    <p:message for="@previous"/>
+                </div>
+                <div class="p-field" style="margin: 2em">
+                    <p:outputLabel for="sport" style="margin-right: 1em">Sport: </p:outputLabel>
+                    <p:inputText id="sport" type="text" value="#{StoreBean.sport}"/>
+                    <p:message for="@previous"/>
+                </div>
+                <div class="p-field" style="margin: 2em">
+                    <p:outputLabel for="quantity" style="margin-right: 1em">Quantity: </p:outputLabel>
+                    <p:inputText id="quantity" type="text" value="#{StoreBean.quantity}"/>
+                    <p:message for="@previous"/>
+                </div>
+                <div class="p-field" style="margin: 2em">
+                    <p:outputLabel for="price" style="margin-right: 1em">Price: </p:outputLabel>
+                    <p:inputText id="price" type="text" value="#{StoreBean.price}"/>
+                    <p:message for="@previous"/>
+                </div>
+                <div class="p-field" style="margin: 2em">
+                    <p:outputLabel for="date" style="margin-right: 1em">Date: </p:outputLabel>
+                    <p:inputText id="date" type="text" value="#{StoreBean.date}"/>
+                    <p:message for="@previous"/>
+                </div>
+                <p:commandButton style="margin: 2em" type="submit" actionListener="#{StoreBean.addInventory}"
+                                 value="Add Item" ajax="false" validateClient="true"
+                                 icon="pi pi-check" iconPos="right" update="growl"/>
+                <p:growl id="growl" showDetail="true"/>
+            </h:form>
+        </div>
+    </div>
+
+</h:body>
+</html>
