@@ -1,0 +1,4 @@
+com\szwec\database\service\InventoryManager.class
+com\szwec\database\model\Item.class
+com\szwec\database\service\InventoryService.class
+com\szwec\database\model\Inventory.class
